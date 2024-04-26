@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1713969503430,
+      "tag": "0000_damp_frightful_four",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1714029707029,
+      "tag": "0001_regular_guardian",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1714130519955,
+      "tag": "0002_free_fat_cobra",
+      "breakpoints": true
+    }
+  ]
+}

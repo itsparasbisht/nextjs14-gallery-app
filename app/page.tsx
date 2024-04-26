@@ -1,3 +1,5 @@
+import { db } from "@/server/db";
+
 const mockImages = [
   {
     id: 1,
@@ -17,12 +19,16 @@ const mockImages = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const users = await db.query.user.findMany();
+
+  console.log(users);
+
   return (
     <main>
       <div className="flex flex-wrap gap-4">
-        {[...mockImages, ...mockImages, ...mockImages].map((image) => (
-          <div key={image.id} className="w-48">
+        {[...mockImages, ...mockImages, ...mockImages].map((image, index) => (
+          <div key={index} className="w-48">
             <img src={image.url} />
           </div>
         ))}
