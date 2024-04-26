@@ -23,13 +23,14 @@ const mockImages = [
 ];
 
 export default async function Home() {
-  const users = await db.delete(user);
-
-  console.log(users);
+  const users = await db.query.user.findMany();
 
   return (
     <main>
       <div className="flex flex-wrap gap-4">
+        {users.map((user) => (
+          <h1>{user.name}</h1>
+        ))}
         {[...mockImages, ...mockImages, ...mockImages].map((image, index) => (
           <div key={index} className="w-48">
             <img src={image.url} />
