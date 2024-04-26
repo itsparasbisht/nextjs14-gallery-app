@@ -1,4 +1,7 @@
 import { db } from "@/server/db";
+import { user } from "@/server/db/schema";
+
+export const dynamic = "force-dynamic";
 
 const mockImages = [
   {
@@ -20,7 +23,7 @@ const mockImages = [
 ];
 
 export default async function Home() {
-  const users = await db.query.user.findMany();
+  const users = await db.delete(user);
 
   console.log(users);
 
