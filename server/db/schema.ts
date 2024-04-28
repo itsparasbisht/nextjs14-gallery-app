@@ -13,6 +13,7 @@ export const images = pgTable(
     id: serial("id").primaryKey(),
     name: varchar("name", { length: 255 }).notNull(),
     url: varchar("url", { length: 1024 }).notNull(),
+    userId: varchar("user_id", { length: 255 }).notNull(),
     createdAt: timestamp("created_at")
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
