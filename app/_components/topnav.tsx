@@ -9,20 +9,22 @@ export function TopNav() {
   const router = useRouter();
 
   return (
-    <nav className="flex items-center justify-between w-full p-4 text-xl font-semibold border-b">
-      <div>Gallery</div>
+    <nav className="flex items-center justify-between w-full p-4 text-xl font-semibold border-b border-gray-500">
+      <div className="text-2xl">Gallery</div>
       <div>
         <SignedOut>
           <SignInButton />
         </SignedOut>
         <SignedIn>
-          <UploadButton
-            endpoint="imageUploader"
-            onClientUploadComplete={() => {
-              router.refresh();
-            }}
-          />
-          <UserButton />
+          <div className="flex items-start gap-4">
+            <UploadButton
+              endpoint="imageUploader"
+              onClientUploadComplete={() => {
+                router.refresh();
+              }}
+            />
+            <UserButton />
+          </div>
         </SignedIn>
       </div>
     </nav>

@@ -6,21 +6,23 @@ export default async function FullPageImageView(props: { id: number }) {
   const userInfo = await clerkClient.users.getUser(image.userId);
 
   return (
-    <div className="flex h-full w-screen min-w-0 items-center justify-center text-white">
-      <div className="flex-shrink flex-grow">
-        <img src={image.url} className="object-contain" alt={image.name} />
+    <div className="text-white h-full flex justify-between">
+      <div className="flex justify-center items-center">
+        <img src={image.url} className="" alt={image.name} />
       </div>
-      <div className="flex h-full w-56 flex-shrink-0 flex-col border-l">
-        <div className="border-b p-2 text-center text-xl">{image.name}</div>
+      <div className="p-2 border-l border-gray-500">
+        <div className="text-2xl p-2 border-b border-gray-500">
+          {image.name}
+        </div>
 
-        <div className="p-2">
-          <div>Uploaded By:</div>
-          <div>{userInfo.fullName}</div>
+        <div className=" p-2 border-b border-gray-500">
+          <div className="text-lg">Uploaded By: {userInfo.fullName}</div>
         </div>
 
         <div className="p-2">
-          <div>Created On:</div>
-          <div>{image.createdAt.toLocaleDateString()}</div>
+          <div className="text-lg">
+            Uploaded On: {image.createdAt.toLocaleDateString()}
+          </div>
         </div>
       </div>
     </div>
