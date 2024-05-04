@@ -24,10 +24,12 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${inter.className} flex flex-col gap-4`}>
-          <TopNav />
-          {children}
-          {modal}
+        <body className={`${inter.className}`}>
+          <div className="grid h-screen grid-rows-[auto,1fr]">
+            <TopNav />
+            <main className="overflow-y-scroll">{children}</main>
+            {modal}
+          </div>
           <div id="modal-root" />
         </body>
       </html>
