@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${inter.className}`}>
+        <body className={`${inter.className} dark`}>
           <div className="grid h-screen grid-rows-[auto,1fr]">
             <TopNav />
             <main className="overflow-y-scroll">{children}</main>
