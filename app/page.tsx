@@ -19,6 +19,7 @@ async function Images() {
                 alt={image.name}
                 layout="fill"
                 objectFit="cover"
+                className="rounded-sm"
               />
             </Link>
           </div>
@@ -33,7 +34,7 @@ export default async function Home() {
   return (
     <main>
       <SignedOut>
-        <div className="text-center">Please sign in</div>
+        <div className="text-center text-md mt-2">Please sign in</div>
       </SignedOut>
       <SignedIn>
         <Images />

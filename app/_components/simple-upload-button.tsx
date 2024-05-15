@@ -56,7 +56,7 @@ function LoadingSpinnerSVG() {
       height="24"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      fill="white"
+      fill="black"
     >
       <path
         d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
@@ -76,7 +76,7 @@ export function SimpleUploadButton() {
   const { inputProps } = useUploadThingInputProps("imageUploader", {
     onUploadBegin() {
       toast(
-        <div className="flex items-center gap-2 text-white">
+        <div className="flex items-center gap-2 text-black font-semibold">
           <LoadingSpinnerSVG /> <span className="text-lg">Uploading...</span>
         </div>,
         {
@@ -87,7 +87,11 @@ export function SimpleUploadButton() {
     },
     onClientUploadComplete() {
       toast.dismiss("upload-begin");
-      toast(<span className="text-lg">Upload complete!</span>);
+      toast(
+        <span className="text-lg text-black font-semibold">
+          Upload complete!
+        </span>
+      );
       router.refresh();
     },
   });
