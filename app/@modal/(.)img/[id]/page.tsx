@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Modal } from "./modal";
 import FullPageImageView from "@/components/full-image-page";
 
