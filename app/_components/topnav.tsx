@@ -4,7 +4,7 @@ import { SimpleUploadButton } from "./simple-upload-button";
 
 export function TopNav() {
   return (
-    <nav className="flex items-center justify-between w-full p-4 text-xl font-semibold border-b border-gray-500">
+    <nav className="flex items-center justify-between w-full p-4 text-xl font-semibold menu-bar-shadow">
       <div className="text-2xl">Gallery</div>
       <div>
         <SignedOut>

@@ -7,10 +7,7 @@ export default async function FullPageImageView(props: { id: number }) {
   const userInfo = await clerkClient.users.getUser(image.userId);
 
   return (
-    <div className="text-white h-full flex justify-between">
-      <div className="flex justify-center items-center">
-        <img src={image.url} className="" alt={image.name} />
-      </div>
+    <div className="text-white h-full">
       <div className="p-2 border-l border-gray-500">
         <div className="text-2xl p-2 border-b border-gray-500">
           {image.name}
@@ -38,6 +35,10 @@ export default async function FullPageImageView(props: { id: number }) {
             </Button>
           </form>
         </div>
+      </div>
+
+      <div className="flex justify-center items-center">
+        <img src={image.url} className="self-center" alt={image.name} />
       </div>
     </div>
   );

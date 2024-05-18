@@ -1,14 +1,9 @@
-"use client";
-
-import { useState } from "react";
-import LoadingBar from "react-top-loading-bar";
-
 export default function Loading() {
-  const [progress, setProgress] = useState(10);
-
-  setInterval(() => {
-    setProgress((prev) => prev + 15);
-  }, 1000);
-
-  return <LoadingBar color="#f11946" height={4} progress={progress} />;
+  return (
+    <div className="fixed w-screen flex justify-center">
+      <p className="bg-orange-200 p-1 text-black font-medium px-2 rounded-sm">
+        loading...
+      </p>
+    </div>
+  );
 }

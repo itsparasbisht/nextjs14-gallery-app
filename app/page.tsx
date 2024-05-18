@@ -19,7 +19,7 @@ async function Images() {
                 alt={image.name}
                 layout="fill"
                 objectFit="cover"
-                className="rounded-sm"
+                className="rounded-sm border "
               />
             </Link>
           </div>
