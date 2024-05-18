@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { TopNav } from "./_components/topnav";
 
 import { ClerkProvider } from "@clerk/nextjs";
@@ -8,7 +8,7 @@ import "./globals.css";
 import "@uploadthing/react/styles.css";
 import { Toaster } from "@/components/ui/sonner";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ weight: ["100", "400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Next Gallery",
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${inter.className} bg-gray-50`}>
+        <body className={`${poppins.className} bg-gray-50`}>
           <div className="grid h-screen grid-rows-[auto,1fr]">
             <TopNav />
             <main className="overflow-y-scroll">{children}</main>
