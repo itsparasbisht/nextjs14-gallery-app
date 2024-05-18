@@ -94,6 +94,14 @@ export function SimpleUploadButton() {
       );
       router.refresh();
     },
+    onUploadError() {
+      toast.dismiss("upload-begin");
+      toast(
+        <span className="text-lg text-black font-semibold">
+          Failed to upload!
+        </span>
+      );
+    },
   });
 
   return (
