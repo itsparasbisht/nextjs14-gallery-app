@@ -1,3 +1,7 @@
 export default function Loading() {
-  return <div className="text-center text-xl mt-2">loading...</div>;
+  return (
+    <div className="w-screen h-[600px] text-lg text-gray-400 flex justify-center items-center">
+      loading...
+    </div>
+  );
 }

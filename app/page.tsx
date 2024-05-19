@@ -8,6 +8,14 @@ export const dynamic = "force-dynamic";
 async function Images() {
   const images = await getMyImages();
 
+  if (images.length === 0) {
+    return (
+      <p className="w-screen h-[600px] text-lg text-gray-400 flex justify-center items-center">
+        Start uploading your images
+      </p>
+    );
+  }
+
   return (
     <div className="flex flex-wrap justify-center gap-4 p-4">
       {images.map((image) => (
@@ -34,7 +42,9 @@ export default async function Home() {
   return (
     <main>
       <SignedOut>
-        <div className="text-center text-md mt-2">Please sign in</div>
+        <div className="w-screen h-[600px] text-lg text-gray-400 flex justify-center items-center">
+          Please sign in
+        </div>
       </SignedOut>
       <SignedIn>
         <Images />

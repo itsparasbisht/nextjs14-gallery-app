@@ -9,7 +9,9 @@ export default function Error({
 }) {
   return (
     <div>
-      <h2 className="text-center mt-4">Something went wrong!</h2>
+      <h2 className="w-screen h-[600px] text-lg text-gray-400 flex justify-center items-center">
+        Something went wrong!
+      </h2>
     </div>
   );
 }
