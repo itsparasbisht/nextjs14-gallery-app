@@ -49,7 +49,7 @@ function UploadSVG() {
   );
 }
 
-function LoadingSpinnerSVG() {
+export function LoadingSpinnerSVG() {
   return (
     <svg
       width="24"
