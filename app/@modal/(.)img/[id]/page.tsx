@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { Modal } from "./modal";
 import FullPageImageView from "@/components/full-image-page";
 
@@ -12,7 +11,7 @@ export default function PhotoModal({
 
   return (
     <Modal>
-      <FullPageImageView id={idAsNumber} />
+      <FullPageImageView id={idAsNumber} intercepted />
     </Modal>
   );
 }

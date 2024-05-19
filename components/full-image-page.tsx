@@ -1,7 +1,12 @@
 import { deleteImage, getImage } from "@/server/queries";
 
-export default async function FullPageImageView(props: { id: number }) {
-  const image = await getImage(props.id);
+type FullPageImageViewProps = { id: number; intercepted: boolean };
+
+export default async function FullPageImageView({
+  id,
+  intercepted,
+}: FullPageImageViewProps) {
+  const image = await getImage(id);
 
   function DeleteSVG() {
     return (
@@ -11,7 +16,7 @@ export default async function FullPageImageView(props: { id: number }) {
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        className="w-6 h-6"
+        className="w-6 h-6 text-white"
       >
         <path
           stroke-linecap="round"
@@ -23,20 +28,22 @@ export default async function FullPageImageView(props: { id: number }) {
   }
 
   return (
-    <div className="text-white h-full">
+    <div className={`${intercepted ? "text-white" : "text-black"} h-full`}>
       <div className="w-screen pt-5 px-4 flex justify-between">
         <p className="text-lg">
           {image.name} | Uploaded On: {image.createdAt.toLocaleDateString()}
         </p>
 
-        <div className="">
+        <div>
           <form
             action={async () => {
               "use server";
-              await deleteImage(props.id);
+              await deleteImage(id);
             }}
           >
-            <button className="bg-red-500 p-2 rounded-sm">
+            <button
+              className={`bg-red-500 p-2 rounded-sm ${intercepted && "mr-9"}`}
+            >
               <DeleteSVG />
             </button>
           </form>
