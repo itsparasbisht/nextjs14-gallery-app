@@ -20,7 +20,7 @@ async function Images() {
     <div className="flex flex-wrap justify-center gap-4 p-4">
       {images.map((image) => (
         <div key={image.id} className="flex flex-col items-center">
-          <div className="relative w-44 h-44 md:w-56 md:h-56">
+          <div className="relative w-[42vw] h-[42vw] md:w-56 md:h-56">
             <Link href={`/img/${image.id}`}>
               <Image
                 src={image.url}
@@ -31,7 +31,9 @@ async function Images() {
               />
             </Link>
           </div>
-          <div className="w-44 md:w-56 truncate text-center">{image.name}</div>
+          <div className="w-[42vw] md:w-56 truncate text-center">
+            {image.name}
+          </div>
         </div>
       ))}
     </div>
